@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Dashboard Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.3.0/css/bootstrap.min.css}" rel="stylesheet">
+    
+    <link th:href="@{https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css}" rel="stylesheet">
+     
+    <script th:src="@{https://cdn.bootcss.com/jquery/3.3.1/jquery.js}"></script>
+    <script th:src="@{https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script th:src="@{https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js}"></script>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+</head>
+
+<body>
+<nav th:replace="~{commons/commons::topbar}"></nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav th:replace="~{commons/commons::sidebar(active='employeeList')}"></nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h2>添加员工</h2>
+            <div>
+                <form th:action="@{/addEmployeeAction}" method="post">
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <input type="text" class="form-control" name="lastName" placeholder="Enter last name">
+                    </div>
+                    <label>Gender</label>
+                    <select class="form-control" name="gender">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="email"
+                               placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select class="form-control" name="department.id">
+                            <option th:each="dept:${departmentList}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
+                        </select>
+                    </div>
+
+                    <!-- <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker">
+                        <input placeholder="Select date" type="text" name="birthday" class="form-control">
+                        <label>Select your birthday</label>
+                            <i class="fas fa-calendar input-prefix" tabindex=0></i>
+                    </div> -->
+                    <div class="form-group">
+                        <label>Birthday</label>
+                        <input type="text" class="form-control" name="birthday" placeholder="yyyy-MM-dd">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"></script>
+<script>window.jQuery || document.write('<script th:src="@{/js/jquery-slim.min.js}"><\/script>')</script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+</body>
+
+</html>

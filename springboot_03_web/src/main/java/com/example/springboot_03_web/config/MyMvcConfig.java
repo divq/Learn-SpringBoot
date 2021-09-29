@@ -22,7 +22,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         WebMvcConfigurer.super.addViewControllers(registry);
-        registry.addViewController("/kuang").setViewName("test");
+        registry.addViewController("/fake").setViewName("test");
     }
 
     public static class MyViewResolver implements ViewResolver{
