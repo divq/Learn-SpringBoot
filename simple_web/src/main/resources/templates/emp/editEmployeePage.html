@@ -50,10 +50,11 @@
             <h2>编辑员工</h2>
             <div>
                 <form th:action="@{/editEmployeeAction}" method="post">
+                    <input type="hidden" name="id" th:value="${employee.getId()}">
                     <div class="form-group">
                         <label>Last name</label>
                         <input type="text" class="form-control" name="lastName"
-                               th:placeholder="${employee.getLastName()}">
+                               th:value="${employee.getLastName()}">
                     </div>
                     <label>Gender</label>
                     <select class="form-control" name="gender">
@@ -64,7 +65,7 @@
                     <div class="form-group">
                         <label>Email address</label>
                         <input type="email" class="form-control" name="email"
-                               th:placeholder="${employee.getEmail()}">
+                               th:value="${employee.getEmail()}">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
                     </div>
@@ -83,7 +84,7 @@
                     <div class="form-group">
                         <label>Birthday</label>
                         <input type="text" class="form-control" name="birthday"
-                               th:placeholder="${#dates.format(employee.getBirthday(),'yyyy-MM-dd HH:mm:ss')}">
+                               th:value="${#dates.format(employee.getBirthday(),'yyyy-MM-dd')}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

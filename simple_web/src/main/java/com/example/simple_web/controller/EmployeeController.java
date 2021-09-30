@@ -61,4 +61,9 @@ public class EmployeeController {
         return "emp/editEmployeePage";
     }
 
+    @PostMapping("/editEmployeeAction")
+    public String editEmployeeAction(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/allEmployee";
+    }
 }
