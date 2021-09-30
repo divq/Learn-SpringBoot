@@ -25,10 +25,10 @@ public class EmployeeDao {
     static {
         employees = new HashMap<Integer, Employee>();
         employees.put(1001, new Employee(1001, "Jackson", "helloworld1001@hello.com", 0, new Department(101, "教学部"), new Date()));
-        employees.put(1002, new Employee(1002, "Anny", "helloworld1002@hello.com", 1, new Department(101, "市场部"), new Date()));
-        employees.put(1003, new Employee(1003, "Randell", "helloworld1003@hello.com", 0, new Department(101, "研究部"), new Date()));
-        employees.put(1004, new Employee(1004, "Bob", "helloworld1004@hello.com", 1, new Department(101, "运营部"), new Date()));
-        employees.put(1005, new Employee(1005, "James", "helloworld1005@hello.com", 0, new Department(101, "教学部"), new Date()));
+        employees.put(1002, new Employee(1002, "Anny", "helloworld1002@hello.com", 1, new Department(102, "市场部"), new Date()));
+        employees.put(1003, new Employee(1003, "Randell", "helloworld1003@hello.com", 0, new Department(103, "研究部"), new Date()));
+        employees.put(1004, new Employee(1004, "Bob", "helloworld1004@hello.com", 1, new Department(104, "运营部"), new Date()));
+        employees.put(1005, new Employee(1005, "James", "helloworld1005@hello.com", 0, new Department(105, "教学部"), new Date()));
     }
 
 

@@ -57,7 +57,7 @@ public class EmployeeController {
     public String editEmployeePage(int employeeId, Model model) {
         Employee employee = employeeDao.getEmployee(employeeId);
         model.addAttribute("employee", employee);
-        model.addAttribute("departmentList",departmentDao.getDepartments());
+        model.addAttribute("departmentList", departmentDao.getDepartments());
         return "emp/editEmployeePage";
     }
 
