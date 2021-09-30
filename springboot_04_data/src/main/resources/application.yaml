@@ -1,0 +1,24 @@
+##    web-stat-filter:
+##      enabled: true
+##      url-pattern: /*
+##      #设置不统计哪些URL
+##      exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+##      session-stat-enable: true
+##      session-stat-max-count: 100
+##    stat-view-servlet:
+##      enabled: true
+##      url-pattern: /druid/*
+##      reset-enable: true
+#      #设置监控页面的登录名和密码
+##      login-username: admin
+##      login-password: admin
+##      allow: 127.0.0.1
+#      #deny: 192.168.1.100
+##      use-global-data-source-stat: true
+#    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+
+server:
+  port: 8090
+
